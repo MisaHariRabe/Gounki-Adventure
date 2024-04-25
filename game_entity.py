@@ -1,5 +1,6 @@
 import pygame
 
+
 class GameEntity(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
@@ -13,8 +14,7 @@ class GameEntity(pygame.sprite.Sprite):
         # Vérifier les collisions verticales
         self.on_ground = False
         self.manage_collisions(collisions, 0, self.vel.y)
-        
-            
+
     def manage_collisions(self, collisions, dx, dy):
         """ gere la collision avec les obstacles """
         for obstacle in collisions:

@@ -65,8 +65,13 @@ class MapManager:
         self.group.draw(self.game.screen)
         if pygame.sprite.spritecollideany(self.player, self.enemies) or pygame.sprite.spritecollideany(self.player, self.void):
             self.game.win = False
+            self.game.menu.draw_welcome_page()
+            pygame.time.delay(5000)
             self.game.game_state = START_MENU
+            self.game.audio_manager.load_bgm_menu()
         if pygame.sprite.spritecollideany(self.player, self.finish):
             self.game.win = True
+            self.game.menu.draw_welcome_page()
+            pygame.time.delay(5000)
             self.game.game_state = START_MENU
-
+            self.game.audio_manager.load_bgm_menu()
